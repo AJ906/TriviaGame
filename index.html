@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trivia Time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="style.css" /> -->
+    <!-- <script src="assets/javascript/app.js"></script> -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <h1>Trivia Time!!!</h1>
+    <p>10 questions; 30 seconds each</p>
+    <p>How well do you know your trivia?</p>
+    <button id="startGame">Game On!</button>
+    <div id="timeRemaining"></div>
+    <div id="questions"></div>
+    
+
+    <!-- <div id="buttons">
+            <button id="start"><h2>Start</h2></button>
+            <button id="stop"><h2>Stop</h2></button>
+          </div>
+      
+          <div id="image-holder"></div> -->
+    <script>
+
+var questionBank = [{
+
+question: "1. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+correctAnswer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},
+{
+question: "2. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+answer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},
+
+{
+
+question: "3. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+answer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},
+{
+
+question: "4. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+answer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},
+{
+
+question: "5. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+answer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},
+{
+
+question: "6. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+answer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},
+{
+
+question: "7. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+answer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},
+{
+
+question: "8. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+answer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},
+{
+
+question: "9. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+answer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},
+{
+
+question: "10. What's the name of the HW?",
+options: ['trivia', 'easy', 'hop-scotch'],
+answer: "trivia",
+userAnswer: "",
+correct: ''//boolean *if userAnswer = answer, set correct as true
+},];
+
+var showQuestion;
+
+var count = 0;
+
+ $("#startGame").click(startTriviaGame);
+ 
+ $("#stopGame").click(stopTriviaGame);
+ 
+ function displayQuestion() {
+  $("#questions").html("<p>" + questionBank[count].question + "</p>");
+}
+
+function nextQuestion() {
+  //  TODO: Increment the count by 1.
+  count++;
+
+
+    
+setTimeout(displayQuestion, 1000);
+
+if (count === questionBank.length) {
+    count = 0;
+  }
+}
+function startTriviaGame() {
+
+// TODO: Use showImage to hold the setInterval to run nextImage.
+showQuestion = setInterval(nextQuestion, 3000);
+
+}
+   
+function stopTriviaGame() {
+
+// TODO: Put our clearInterval here:
+clearInterval(showQuestion);
+
+}
+
+// This will run the display image function as soon as the page loads.
+displayQuestion();
+
+
+    </script>
+
+</body>
+</html>
