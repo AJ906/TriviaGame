@@ -16,7 +16,7 @@
     <p>10 questions; 30 seconds each</p>
     <p>Match the John Hughes movie plot with the title.</p>
    
-    <button id="startGame">Game On!</button>
+    <button id="startButton">Game On!</button>
    
     <div id="timeRemaining"></div>
    
@@ -35,11 +35,25 @@
           </div>
       
           <div id="image-holder"></div> -->
-    <script>
-$(document).ready(function() {
+    <script> //Lost functionality when I moved to app.js file
 
-// $("#questions").hide();
+$("#startButton").on("click", function(){
+    $("startButton").hide;
 
+    $("#questions").html(
+    "<p>" + questionBank[count].question + "</p>" + 
+    "<p><button>" + questionBank[count].options[0] + "</button></p>" +
+    "<p><button>" + questionBank[count].options[1] + "</button></p>" +
+    "<p><button>" + questionBank[count].options[2] + "</button></p>" +
+    "<p><button>" + questionBank[count].options[3] + "</button></p>");
+})
+
+if $
+
+//  function displayQuestion() {
+//   $("#questions").html("<p>" + questionBank[count].question + "</p>" + 
+//   "<button>" + questionBank[count].options + "</button>");
+// }
 var questionBank = [{
 
     question: "1. Five high school students from different walks of life endure a Saturday detention under a power-hungry principal.",
@@ -142,50 +156,58 @@ var questionBank = [{
     correct: " "//boolean *if userAnswer = answer, set correct as true
 },];
 
-var showQuestion;
+// $(document).ready(function() {
+
+// // $("#questions").hide();
+
+// var showQuestion;
 
 var count = 0;
 
-$("#startGame").on("click", function(){
-    $("#startGame").hide;
-    displayQuestion();
-} )
+// $("#startGame").on("click", function(){
+//     $("#startGame").hide;
+//     displayQuestion();
+// } )
 
- $("#startGame").on("click", startTriviaGame());
+//  $("#startGame").on("click", startTriviaGame());
  
- $("#stopGame").click(stopTriviaGame);
+//  $("#stopGame").click(stopTriviaGame);
  
- function displayQuestion() {
-  $("#questions").html("<p>" + questionBank[count].question + "</p>" + 
-  "<p>" + questionBank[count].options + "</p>");
-}
+//  function displayQuestion() {
+//   $("#questions").html("<p>" + questionBank[count].question + "</p>" + 
+//   "<button>" + questionBank[count].options + "</button>");
+// }
+// // ****CREATE FUNCTION WITH FOR LOOP TO CREATE QUESTIONS WITH BUTTONS***
+// // ***CREATE CANCEL TIMEOUT ON CLICK IF BUTTON IS CLICKED***
+// // ***CREATE FUNCTION WITH IF STATEMENTS TO CHECK FOR CORRECT/INCORRECT ANSWERS***
+// // ***LOOK AT STOPWATCH TO GET TIME REMAINING COUNTDOWN
 
-function nextQuestion() {
-  //  TODO: Increment the count by 1.
-  count++;
+// function nextQuestion() {
+//   //  TODO: Increment the count by 1.
+//   count++;
 
 
     
-setTimeout(displayQuestion, 30000);
+// setTimeout(displayQuestion, 30000);
 
-if (count === questionBank.length) {
-    count = 0;
-  }
-}
-function startTriviaGame() {
+// if (count === questionBank.length) {
+//     count = 0;
+//   }
+// }
+// function startTriviaGame() {
 
-// TODO: Use showImage to hold the setInterval to run nextImage.
-showQuestion = setInterval(nextQuestion, 3000);
+// // TODO: Use showImage to hold the setInterval to run nextImage.
+// showQuestion = setInterval(nextQuestion, 3000);
 
-}
+// }
    
-function stopTriviaGame() {
+// function stopTriviaGame() {
 
-// TODO: Put our clearInterval here:
-clearInterval(showQuestion);
+// // TODO: Put our clearInterval here:
+// clearInterval(showQuestion);
 
-}
-});
+// }
+// });
 // This will run the display image function as soon as the page loads.
 // displayQuestion();
 
