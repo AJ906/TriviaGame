@@ -1,8 +1,11 @@
-var correctCount;
-var incorrectCount;
-var counter;
-var percentage;
-var numberOfCheckedRadio = $('input:radio:name:answer:value:correct').length;
+var correctCount=0;
+var incorrectCount=0;
+var counter=0;
+var percentage=0;
+// var numberOfCheckedRadio = $('').length;
+var score = function() {
+    return form.find(':checked[data-correct]').length;
+  };
 
 
 //***BEGINNING OF AREA FOR WHAT HAS BEEN TESTED AND WORKS
@@ -19,7 +22,7 @@ $("#startButton").on("click", function(){
     $("#startButton").hide();
     $("#timeRemaining").show();
     $("#questions").show();
-    setTimeout(allDone, 1000 * 3);
+    setTimeout(allDone, 1000 * 15);
 });
 
 
@@ -28,11 +31,22 @@ function allDone() {
   $("#timesUp").append("<h2>Time's Up!</h2>");
   $("#questions").hide();
   $(".score-holder").show();
-  console.log(numberOfCheckedRadio);
+
+  //***END OF AREA FOR WHAT HAS BEEN TESTED AND WORKS***
+
+  $("#reStartButton").on("click", function(){
+    $("#reStartButton").hide();
+    $("#timeRemaining").show();
+    $("#questions").show();
+    $("#timesUp").hide();
+    $(".score-holder").hide();
+    setTimeout(allDone, 1000 * 3);
+});
+  console.log(score);
 //   console.log("time is up");
 }
 
-//***END OF AREA FOR WHAT HAS BEEN TESTED AND WORKS
+
 
 
 
