@@ -13,14 +13,14 @@
 <body>
         <h1>John Hughes Movie Trivia Time!!!</h1>
         <p>10 questions; Two minutes</p>
-        <p>Match the John Hughes movie plot with the title.</p>
+        <p>Match the John Hughes movie plot with the title. </p>
 
         <button id="startButton">Game On!</button>
    
         <div id="timeRemaining">02:00</div>
         <div id="timesUp"></div>
         <div class="score-holder">
-            <p id="correct">Correct answers: </p>
+            <p id="">Correct answers: </p>
             <p id="wrong">Incorrect answers: </p>
             <p id="overall-score">Score: </p>
             <button id="reStartButton">Play Again?</button>
@@ -29,26 +29,26 @@
    
         <div id="questions">
     
-    <form action="/success-page" class="hughes-quiz">
+    <form name="quizForm" onsubmit="return submitAnswers()">
 
         <p>1. Five high school students from different walks of life 
             endure a Saturday detention under a power-hungry principal.</p>
 
             
-            <label><input type="radio" name="answer[1]" value="a">Uncle Buck</label><br> 
-            <label><input type="radio" name="answer[1]" value="b">Sixteen Candles</label><br>  
-            <label><input type="radio" name="answer[1]" value="c" data-correct>The Breakfast Club</label><br>
-            <label><input type="radio" name="answer[1]" value="d">Home Alone</label><br>
+            <label><input type="radio" name="q1" value="a" id="q1a">Uncle Buck</label><br> 
+            <label><input type="radio" name="q1" value="b" id="q1b">Sixteen Candles</label><br>  
+            <label><input type="radio" name="q1" value="c" id="q1c" data-correct>The Breakfast Club</label><br>
+            <label><input type="radio" name="q1" value="d" id="q1d">Home Alone</label><br>
             
         <p>2. When Cindy and her husband, Bob, have to leave town for a 
             family emergency, there is only one person available to babysit 
             for their three kids: Bob's lazy, carefree brother.</p>
             
 
-            <label><input type="radio" name="answer[2]" value="a" data-correct>Uncle Buck<br> 
-            <label><input type="radio" name="answer[2]" value="b">Mr. Mom<br> 
-            <label><input type="radio" name="answer[2]" value="c">Ferris Bueller's Day Off<br>
-            <label><input type="radio" name="answer[2]" value="d">National Lampoon's Vacation<br>
+            <label><input type="radio" name="q2" value="a" id="q2a" data-correct>Uncle Buck<br> 
+            <label><input type="radio" name="q2" value="b" id="q2b">Mr. Mom<br> 
+            <label><input type="radio" name="q2" value="c" id="q2c">Ferris Bueller's Day Off<br>
+            <label><input type="radio" name="q2" value="d" id="q2d">National Lampoon's Vacation<br>
             
         
         <p>3. When bratty 8-year-old Kevin McCallister acts out the night 
@@ -57,10 +57,10 @@
             airport without Kevin, he awakens to an empty house.</p>
 
         
-            <input type="radio" name="answer[3]" value="incorrect">Weird Science<br> 
-            <input type="radio" name="answer[3]" value="incorrect">Ferris Bueller's Day Off<br> 
-            <input type="radio" name="answer[3]" value="incorrect">National Lampoon's Vacation<br>
-            <input type="radio" name="answer[3]" value="correct" data-correct>Home Alone<br>
+            <input type="radio" name="q3" value="a" id="q3a">Weird Science<br> 
+            <input type="radio" name="q3" value="b" id="q3b">Ferris Bueller's Day Off<br> 
+            <input type="radio" name="q3" value="c" id="q3c">National Lampoon's Vacation<br>
+            <input type="radio" name="q3" value="d" id="q3d" data-correct>Home Alone<br>
             
         
         <p>4. Easily excitable Neal Page is somewhat of a control freak. 
@@ -69,10 +69,10 @@
             of a freak snowstorm, and his sanity begins to fray.</p>
 
         
-                <input type="radio" name="answer[4]" value="incorrect">Pretty in Pink<br> 
-                <input type="radio" name="answer[4]" value="incorrect">Sixteen Candles<br> 
-                <input type="radio" name="answer[4]" value="incorrect">Some Kind of Wonderful<br>
-                <input type="radio" name="answer[4]" value="correct" data-correct>Planes, Trains and Automobiles<br>
+                <input type="radio" name="q4" value="a" id="q4a">Pretty in Pink<br> 
+                <input type="radio" name="q4" value="b" id="q4b">Sixteen Candles<br> 
+                <input type="radio" name="q4" value="c" id="q4c">Some Kind of Wonderful<br>
+                <input type="radio" name="q4" value="d" id="q4d" data-correct>Planes, Trains and Automobiles<br>
 
         
         
@@ -81,20 +81,20 @@
             adolescent dread.</p>
                 
         
-                    <input type="radio" name="answer[5]" value="incorrect">Curly Sue<br> 
-                    <input type="radio" name="answer[5]" value="correct" data-correct>Sixteen Candles<br> 
-                    <input type="radio" name="answer[5]" value="incorrect">Pretty in Pink<br>
-                    <input type="radio" name="answer[5]" value="incorrect">Some Kind of Wonderful<br>
+                    <input type="radio" name="q5" value="a" id="q5a">Curly Sue<br> 
+                    <input type="radio" name="q5" value="b" id="q5b" data-correct>Sixteen Candles<br> 
+                    <input type="radio" name="q5" value="c" id="q5c">Pretty in Pink<br>
+                    <input type="radio" name="q5" value="d" id="q5d">Some Kind of Wonderful<br>
 
         
         <p>6. Andie is an outcast at her Chicago high school, hanging out 
             either with her older boss, who owns the record store where she 
             works, or her quirky classmate Duckie, who has a crush on her.</p>
                 
-                    <input type="radio" name="answer[6]" value="correct" data-correct>Pretty in Pink<br> 
-                    <input type="radio" name="answer[6]" value="incorrect">Weird Science<br> 
-                    <input type="radio" name="answer[6]" value="incorrect">National Lampoon's Vacation<br>
-                    <input type="radio" name="answer[6]" value="incorrect">Some Kind of Wonderful<br>
+                    <input type="radio" name="q6" value="a" id="q6a" data-correct>Pretty in Pink<br> 
+                    <input type="radio" name="q6" value="b" id="q6b">Weird Science<br> 
+                    <input type="radio" name="q6" value="c" id="q6c">National Lampoon's Vacation<br>
+                    <input type="radio" name="q6" value="d" id="q6d">Some Kind of Wonderful<br>
 
 
         <p>7. A high school senior has an uncanny skill at cutting classes 
@@ -102,30 +102,30 @@
             before graduation, he/she calls in sick, 'borrows' a Ferrari, 
             and embarks on a one-day journey through the streets of Chicago.</p>
                 
-                    <input type="radio" name="answer[7]" value="incorrect">Curly Sue<br> 
-                    <input type="radio" name="answer[7]" value="correct" data-correct>Ferris Bueller's Day Off<br> 
-                    <input type="radio" name="answer[7]" value="incorrect">National Lampoon's Vacation<br>
-                    <input type="radio" name="answer[7]" value="incorrect">Some Kind of Wonderful<br>
+                    <input type="radio" name="q7" value="a" id="q7a">Curly Sue<br> 
+                    <input type="radio" name="q7" value="b" id="q7b" data-correct>Ferris Bueller's Day Off<br> 
+                    <input type="radio" name="q7" value="c" id="q7c">National Lampoon's Vacation<br>
+                    <input type="radio" name="q7" value="d" id="q7d">Some Kind of Wonderful<br>
 
         
         <p>8. Keith Nelson, an artsy high school outcast, tries to land 
             a date with popular girl Amanda Jones with some help from 
             his tomboy best friend, Watts.</p>
                 
-                <input type="radio" name="answer[8]" value="incorrect">Weird Science<br> 
-                <input type="radio" name="answer[8]" value="incorrect">Curly Sue<br> 
-                <input type="radio" name="answer[8]" value="incorrect">National Lampoon's Vacation<br>
-                <input type="radio" name="answer[8]" value="correct" data-correct>Some Kind of Wonderful<br>
+                <input type="radio" name="q8" value="a" id="q8a">Weird Science<br> 
+                <input type="radio" name="q8" value="b" id="q8b">Curly Sue<br> 
+                <input type="radio" name="q8" value="c" id="q8c">National Lampoon's Vacation<br>
+                <input type="radio" name="q8" value="d" id="q8d" data-correct>Some Kind of Wonderful<br>
 
 
         <p>9. Teen misfits, Gary and Wyatt, design their ideal woman 
             on a computer, and a freak electrical accident brings her 
             to life in the form of the lovely, superhuman Lisa.</p>
                 
-                <input type="radio" name="answer[9]" value="correct" data-corrrect>Weird Science<br> 
-                <input type="radio" name="answer[9]" value="incorrect">Curly Sue<br> 
-                <input type="radio" name="answer[9]" value="incorrect">National Lampoon's Vacation<br>
-                <input type="radio" name="answer[9]" value="incorrect">Some Kind of Wonderful<br>
+                <input type="radio" name="q9" value="a" id="q9a" data-corrrect>Weird Science<br> 
+                <input type="radio" name="q9" value="b" id="q9b">Curly Sue<br> 
+                <input type="radio" name="q9" value="c" id="q9c">National Lampoon's Vacation<br>
+                <input type="radio" name="q9" value="d" id="q9d">Some Kind of Wonderful<br>
 
 
         <p>10. Automobile engineer Jack is fired from his job. When 
@@ -133,10 +133,10 @@
             roles, placing him in the unfamiliar position of homemaker 
             and caretaker to their three children.</p>
                 
-                <input type="radio" name="answer[10]" value="incorrect">Dutch<br> 
-                <input type="radio" name="answer[10]" value="correct" data-correct>Mr. Mom<br> 
-                <input type="radio" name="answer[10]" value="incorrect">National Lampoon's Vacation<br>
-                <input type="radio" name="answer[10]" value="incorrect">Career Opportunities<br><br>
+                <input type="radio" name="q10" value="a" id="q10a">Dutch<br> 
+                <input type="radio" name="q10" value="b" id="q10b" data-correct>Mr. Mom<br> 
+                <input type="radio" name="q10" value="c" id="q10c">National Lampoon's Vacation<br>
+                <input type="radio" name="q10" value="d" id="q10d">Career Opportunities<br><br>
                 
                 
         <input type="submit">
